@@ -1,0 +1,36 @@
+# ------------------------------------------------------
+# THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
+# ------------------------------------------------------
+
+type PratoComida {
+  _id: String!
+  graos: [String!]!
+  legumes: [String!]!
+  proteinas: [String!]!
+}
+
+type Query {
+  pratoComidas: [PratoComida!]!
+
+  """Irá trazer o prato de comida pelo Id"""
+  pratoComidaPeloId(id: String!): PratoComida!
+}
+
+type Mutation {
+  createPratoComida(createPratoComida: CreatePratoComidaInputDTO!): PratoComida!
+  updatePratoComida(updatePratoComidaInput: UpdatePratoComidaInputDTO!): PratoComida!
+  removePratoComida(id: String!): PratoComida!
+}
+
+input CreatePratoComidaInputDTO {
+  graos: [String!]!
+  legumes: [String!]!
+  proteinas: [String!]!
+}
+
+input UpdatePratoComidaInputDTO {
+  _id: String!
+  graos: [String!]
+  legumes: [String!]
+  proteinas: [String!]
+}
